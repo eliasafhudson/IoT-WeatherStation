@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS sensor_readings (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  ts INTEGER NOT NULL,
+  temp_c REAL,
+  hum_pct REAL,
+  light_pct INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS command_log (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  ts INTEGER NOT NULL,
+  command_string TEXT NOT NULL,
+  status TEXT NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS event_log (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  ts INTEGER NOT NULL,
+  event_type TEXT,
+  payload TEXT
+);

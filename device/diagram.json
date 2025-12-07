@@ -1,0 +1,225 @@
+{
+    "version": 1,
+    "author": "Danny",
+    "editor": "wokwi",
+    "parts": [
+        {
+            "type": "board-esp32-devkit-c-v4",
+            "id": "esp",
+            "top": -96,
+            "left": -71.96,
+            "attrs": {
+                "env": "micropython-20231227-v1.22.0"
+            }
+        },
+        {
+            "type": "wokwi-dht22",
+            "id": "dht",
+            "top": -210.9,
+            "left": -130.2,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-ssd1306",
+            "id": "oled",
+            "top": 102.7,
+            "left": 69.1,
+            "attrs": {
+                "i2cAddress": "0x3c"
+            }
+        },
+        {
+            "type": "wokwi-led",
+            "id": "led",
+            "top": -3.6,
+            "left": -255.4,
+            "attrs": {
+                "color": "red"
+            }
+        },
+        {
+            "type": "wokwi-resistor",
+            "id": "r_led",
+            "top": -63.25,
+            "left": -163.2,
+            "attrs": {
+                "value": "220"
+            }
+        },
+        {
+            "type": "wokwi-buzzer",
+            "id": "buzz",
+            "top": 108,
+            "left": -209.4,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-photoresistor",
+            "id": "ldr",
+            "top": -10,
+            "left": 220,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-resistor",
+            "id": "r1",
+            "top": 13.55,
+            "left": 153.6,
+            "attrs": {
+                "value": "10k"
+            }
+        },
+        {
+            "type": "wokwi-photoresistor-sensor",
+            "id": "ldr1",
+            "top": -169.6,
+            "left": 192.8,
+            "attrs": {}
+        }
+    ],
+    "connections": [
+        [
+            "esp:3V3",
+            "dht:VCC",
+            "red",
+            []
+        ],
+        [
+            "esp:GND",
+            "dht:GND",
+            "black",
+            []
+        ],
+        [
+            "esp:15",
+            "dht:SDA",
+            "cyan",
+            []
+        ],
+        [
+            "esp:21",
+            "oled:SDA",
+            "green",
+            []
+        ],
+        [
+            "esp:22",
+            "oled:SCL",
+            "yellow",
+            []
+        ],
+        [
+            "esp:3V3",
+            "oled:VCC",
+            "red",
+            []
+        ],
+        [
+            "esp:GND",
+            "oled:GND",
+            "black",
+            []
+        ],
+        [
+            "esp:2",
+            "r_led:1",
+            "yellow",
+            []
+        ],
+        [
+            "r_led:2",
+            "led:A",
+            "#8f4814",
+            []
+        ],
+        [
+            "led:C",
+            "esp:GND",
+            "black",
+            []
+        ],
+        [
+            "buzz:2",
+            "esp:GND",
+            "black",
+            []
+        ],
+        [
+            "esp:3V3",
+            "ldr:1",
+            "red",
+            []
+        ],
+        [
+            "ldr:2",
+            "esp:34",
+            "green",
+            []
+        ],
+        [
+            "ldr:2",
+            "r1:1",
+            "green",
+            []
+        ],
+        [
+            "r1:2",
+            "esp:GND",
+            "black",
+            []
+        ],
+        [
+            "esp:TX",
+            "$serialMonitor:RX",
+            "",
+            []
+        ],
+        [
+            "esp:RX",
+            "$serialMonitor:TX",
+            "",
+            []
+        ],
+        [
+            "dht:GND",
+            "esp:GND.2",
+            "gray",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "ldr1:VCC",
+            "esp:3V3",
+            "red",
+            [
+                "h0"
+            ]
+        ],
+        [
+            "ldr1:GND",
+            "r1:2",
+            "black",
+            [
+                "h0"
+            ]
+        ],
+        [
+            "buzz:1",
+            "esp:27",
+            "violet",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "buzz:2",
+            "esp:GND.1",
+            "blue",
+            [
+                "v0"
+            ]
+        ]
+    ],
+    "dependencies": {}
+}

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Entornos virtuales locales
+backend/.venv/
+.venv/
+
+# Bases de datos locales (no subir a GitHub)
+backend/iot_weather.db
+backend/weather.db
+
+# Variables de entorno y secretos
+.env
+backend/.env
+
+# OS
+.DS_Store
+Thumbs.db
