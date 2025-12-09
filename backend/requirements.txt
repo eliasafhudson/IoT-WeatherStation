@@ -1,3 +1,3 @@
-paho-mqtt
-requests
-python-dotenv
+paho-mqtt        # Librería para conectarse y comunicarse con servidores MQTT (mensajería entre dispositivos IoT).
+requests         # Librería para hacer solicitudes HTTP (por ejemplo, enviar datos a servicios web como ThingSpeak).
+python-dotenv    # Librería para leer variables de configuración guardadas en un archivo .env (como claves y contraseñas).
